@@ -55,48 +55,51 @@ public struct _QuickLayoutViewImplementation {
       removeBodyIfNeeded(view)
       return
     }
-
-    let cachingIsEnabled = view.isCachingEnabled
-    if cachingIsEnabled {
-      ScopedLayoutCache.enter(view)
-    }
-
-    let body = getBody(view)
-    updateBodyIfNeeded(view, body)
-    let storage = getStorage(view)
-    storage.bodyAppearanceCoordinator.beginViewAppearanceUpdates()
-    let layoutDirection: LayoutDirection = view.effectiveUserInterfaceLayoutDirection == .rightToLeft ? .rightToLeft : .leftToRight
-    var cachedLayout: LayoutNode?
-    let cacheKey = ScopedLayoutCache.layoutCache != nil ? ObjectIdentifier(view) : nil
-    if let cacheKey, let layout = ScopedLayoutCache.layoutCache?[cacheKey], layout.size == view.bounds.size {
-      cachedLayout = layout
-    }
-    body._applyFrame(view.bounds, alignment: .center, layoutDirection: layoutDirection, cachedLayout: cachedLayout)
-    storage.bodyAppearanceCoordinator.commitViewAppearanceUpdates()
-
-    if cachingIsEnabled {
-      if let viewsWithCache = ScopedLayoutCache.viewsWithCache {
-        for subview in viewsWithCache {
-          subview.layoutIfNeeded()
-        }
+    withQLSystraceLogging(view: view, event: .layoutSubviews) {
+      let cachingIsEnabled = view.isCachingEnabled
+      if cachingIsEnabled {
+        ScopedLayoutCache.enter(view)
       }
 
-      ScopedLayoutCache.leave(view)
+      let body = getBody(view)
+      updateBodyIfNeeded(view, body)
+      let storage = getStorage(view)
+      storage.bodyAppearanceCoordinator.beginViewAppearanceUpdates()
+      let layoutDirection: LayoutDirection = view.effectiveUserInterfaceLayoutDirection == .rightToLeft ? .rightToLeft : .leftToRight
+      var cachedLayout: LayoutNode?
+      let cacheKey = ScopedLayoutCache.layoutCache != nil ? ObjectIdentifier(view) : nil
+      if let cacheKey, let layout = ScopedLayoutCache.layoutCache?[cacheKey], layout.size == view.bounds.size {
+        cachedLayout = layout
+      }
+      body._applyFrame(view.bounds, alignment: .center, layoutDirection: layoutDirection, cachedLayout: cachedLayout)
+      storage.bodyAppearanceCoordinator.commitViewAppearanceUpdates()
+
+      if cachingIsEnabled {
+        if let viewsWithCache = ScopedLayoutCache.viewsWithCache {
+          for subview in viewsWithCache {
+            subview.layoutIfNeeded()
+          }
+        }
+
+        ScopedLayoutCache.leave(view)
+      }
     }
   }
 
   public static func sizeThatFits(_ view: UIView & HasBody, size: CGSize) -> CGSize? {
     guard view.isBodyEnabled, view.isBodySizingEnabled else { return nil }
-    let body = getBody(view)
-    updateBodyIfNeeded(view, body)
-    let layoutDirection: LayoutDirection = view.effectiveUserInterfaceLayoutDirection == .rightToLeft ? .rightToLeft : .leftToRight
-    let layout = body.layoutThatFits(size, layoutDirection: layoutDirection)
-    let cacheKey = ScopedLayoutCache.layoutCache != nil ? ObjectIdentifier(view) : nil
-    if let cacheKey {
-      ScopedLayoutCache.viewsWithCache?.insert(view)
-      ScopedLayoutCache.layoutCache?[cacheKey] = layout
+    return withQLSystraceLogging(view: view, event: .sizeThatFits) {
+      let body = getBody(view)
+      updateBodyIfNeeded(view, body)
+      let layoutDirection: LayoutDirection = view.effectiveUserInterfaceLayoutDirection == .rightToLeft ? .rightToLeft : .leftToRight
+      let layout = body.layoutThatFits(size, layoutDirection: layoutDirection)
+      let cacheKey = ScopedLayoutCache.layoutCache != nil ? ObjectIdentifier(view) : nil
+      if let cacheKey {
+        ScopedLayoutCache.viewsWithCache?.insert(view)
+        ScopedLayoutCache.layoutCache?[cacheKey] = layout
+      }
+      return layout.size
     }
-    return layout.size
   }
 
   public static func quick_flexibility(_ view: UIView & HasBody, for axis: Axis) -> Flexibility? {
@@ -142,13 +145,15 @@ public struct _QuickLayoutViewImplementation {
     if let cacheKey, let body = ScopedLayoutCache.bodyCache?[cacheKey] {
       return body
     }
-    let disableActions = CATransaction.disableActions()
-    CATransaction.setDisableActions(true)
-    let body = view.body
-    if let cacheKey {
-      ScopedLayoutCache.bodyCache?[cacheKey] = body
+    return withQLSystraceLogging(view: view, event: .bodyEvaluation) {
+      let disableActions = CATransaction.disableActions()
+      CATransaction.setDisableActions(true)
+      let body = view.body
+      if let cacheKey {
+        ScopedLayoutCache.bodyCache?[cacheKey] = body
+      }
+      CATransaction.setDisableActions(disableActions)
+      return body
     }
-    CATransaction.setDisableActions(disableActions)
-    return body
   }
 }
