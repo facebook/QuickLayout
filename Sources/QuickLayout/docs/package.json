@@ -1,5 +1,5 @@
 {
-  "name": "staticdocs-starter",
+  "name": "@fb-quicklayout/staticdocs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
