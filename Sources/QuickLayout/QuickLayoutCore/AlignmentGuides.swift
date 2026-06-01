@@ -114,7 +114,7 @@ struct AlignmentGuidesResolver {
     }
     return AlignmentGuides(
       alignmentGuideAggregation.compactMapValues { alignmentArray in
-        guard alignmentArray.count > 0 else { return nil }
+        guard !alignmentArray.isEmpty else { return nil }
         return { dimensions in
           // Take the average of all alignment values
           return alignmentArray.reduce(0) { $0 + $1(dimensions) } / CGFloat(alignmentArray.count)
