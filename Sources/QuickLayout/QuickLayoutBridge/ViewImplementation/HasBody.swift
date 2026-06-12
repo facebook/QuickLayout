@@ -21,7 +21,7 @@ extension HasBody where Self: UIView {
 }
 
 @MainActor @objc(QLBodyCoordinationExperiments)
-public class BodyCoordinationExperiments: NSObject {
+public final class BodyCoordinationExperiments: NSObject {
   @objc static public var preventUnusedCollectionViewCellSizing: Bool = true
 }
 
