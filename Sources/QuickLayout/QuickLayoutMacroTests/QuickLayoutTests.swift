@@ -19,7 +19,7 @@ let testMacros: [String: Macro.Type] = [
   "_QuickLayoutInjection": QuickLayoutInjection.self,
 ]
 
-class QuickLayoutTests: XCTestCase {
+final class QuickLayoutTests: XCTestCase {
   func testBasicMacroExpansion() throws {
     assertMacroExpansion(
       #"""
