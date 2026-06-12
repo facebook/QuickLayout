@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ListCellItemViewServerSnaposhTests: FBServerSnapshotTestCase {
+final class ListCellItemViewServerSnaposhTests: FBServerSnapshotTestCase {
 
   private func runTest(
     title: String,

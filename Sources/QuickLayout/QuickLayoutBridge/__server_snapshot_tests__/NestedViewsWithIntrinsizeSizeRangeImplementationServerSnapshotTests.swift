@@ -24,7 +24,7 @@ private final class QuickIntrinsicSizeRangeView: UIView {
 }
 
 @MainActor
-class NestedViewsWithIntrinsizeSizeRangeImplementationServerSnapshotTests: FBServerSnapshotTestCase {
+final class NestedViewsWithIntrinsizeSizeRangeImplementationServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testWithNestedViewsThaContainsLayoutWithHStacks() {
 

@@ -9,7 +9,7 @@ import FBServerSnapshotTestCase
 import FBTestImageGenerator
 import QuickLayoutBridge
 
-private class SingleSubviewView: UIView {
+private final class SingleSubviewView: UIView {
 
   let label = UILabel()
 
@@ -40,7 +40,7 @@ private class SingleSubviewView: UIView {
 }
 
 @MainActor
-class SingleViewServerSnaposhTests: FBServerSnapshotTestCase {
+final class SingleViewServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testTestAViewWithSingleSubview() {
     let view1 = SingleSubviewView("Ut enim dui")

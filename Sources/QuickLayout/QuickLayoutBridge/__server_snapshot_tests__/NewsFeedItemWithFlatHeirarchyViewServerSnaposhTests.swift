@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class NewsFeedItemWithFlatHeirarchyViewServerSnaposhTests: FBServerSnapshotTestCase {
+final class NewsFeedItemWithFlatHeirarchyViewServerSnaposhTests: FBServerSnapshotTestCase {
 
   private func runTest(content: TestNewsFeedView.Content) {
     let view = TestNewsFeedView()

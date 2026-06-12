@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class _QuickLayoutViewImplementationInvalidSizesServerSnapshotTests: FBServerSnapshotTestCase {
+final class _QuickLayoutViewImplementationInvalidSizesServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testProposeInfinity() {
     let view = TestView1()
@@ -43,7 +43,7 @@ class _QuickLayoutViewImplementationInvalidSizesServerSnapshotTests: FBServerSna
   }
 }
 
-private class TestView1: UIView, HasBody {
+private final class TestView1: UIView, HasBody {
 
   let label1 = UILabel()
   let label2 = UILabel()

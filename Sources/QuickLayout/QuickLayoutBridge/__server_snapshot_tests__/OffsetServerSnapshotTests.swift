@@ -10,7 +10,7 @@ import QuickLayoutBridge
 import XCTest
 
 @MainActor
-class OffsetServerSnapshotTests: FBServerSnapshotTestCase {
+final class OffsetServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testOffset() {
 

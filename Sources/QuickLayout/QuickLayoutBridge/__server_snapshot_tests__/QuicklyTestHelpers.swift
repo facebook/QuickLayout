@@ -88,7 +88,7 @@ final class TestView: UIView {
   }
 }
 
-class ViewWithSize: UIView {
+final class ViewWithSize: UIView {
 
   let customSize: CGSize
   var proposedSizes = [CGSize]()
@@ -126,7 +126,7 @@ func generateTestImage(with text: String, size: CGSize, backgroundColor: UIColor
   return image
 }
 
-class TestPlaceholderView: UIView {
+final class TestPlaceholderView: UIView {
 
   private let lineColor: UIColor
   private let lineWidth: CGFloat
@@ -172,7 +172,7 @@ class TestPlaceholderView: UIView {
   }
 }
 
-class ColorView: UIView {
+final class ColorView: UIView {
 
   private let text: String?
 
@@ -206,7 +206,7 @@ class ColorView: UIView {
   }
 }
 
-class BorderView: UIView {
+final class BorderView: UIView {
   init() {
     super.init(frame: .zero)
     self.layer.borderColor = UIColor.black.cgColor

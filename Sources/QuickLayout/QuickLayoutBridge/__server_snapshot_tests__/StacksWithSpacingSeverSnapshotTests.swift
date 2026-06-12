@@ -9,7 +9,7 @@ import FBServerSnapshotTestCase
 import QuickLayoutBridge
 
 @MainActor
-class StacksWithSpacingSeverSnapshotTests: FBServerSnapshotTestCase {
+final class StacksWithSpacingSeverSnapshotTests: FBServerSnapshotTestCase {
 
   func testSpacersWithSpacing() {
     let view1 = UIView()

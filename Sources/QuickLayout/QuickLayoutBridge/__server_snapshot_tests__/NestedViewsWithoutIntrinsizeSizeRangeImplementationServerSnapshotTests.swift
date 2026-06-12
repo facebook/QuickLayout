@@ -24,7 +24,7 @@ private final class QuickIntrinsicSizeRangeNotProvidedView: UIView {
 }
 
 @MainActor
-class NestedViewsWithoutIntrinsizeSizeRangeImplementationServerSnapshotTests: FBServerSnapshotTestCase {
+final class NestedViewsWithoutIntrinsizeSizeRangeImplementationServerSnapshotTests: FBServerSnapshotTestCase {
 
   /// The reference layout.
   func testWithoutNestedViews() {

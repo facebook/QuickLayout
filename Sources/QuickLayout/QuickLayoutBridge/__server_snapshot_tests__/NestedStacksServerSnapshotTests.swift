@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class NestedStacksServerSnapshotTests: FBServerSnapshotTestCase {
+final class NestedStacksServerSnapshotTests: FBServerSnapshotTestCase {
 
   private func runTest(on views: (UIView, UIView?)) {
     takeSnapshot(

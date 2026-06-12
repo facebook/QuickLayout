@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class UILabelServerSnaposhTests: FBServerSnapshotTestCase {
+final class UILabelServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testLabelsFirstIsLong() {
 

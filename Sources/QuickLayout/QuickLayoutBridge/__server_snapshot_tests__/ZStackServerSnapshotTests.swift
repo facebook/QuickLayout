@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ZStackServerSnaposhTests: FBServerSnapshotTestCase {
+final class ZStackServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testSingleUIViewFlexible() {
     let view1 = UIView()

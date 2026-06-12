@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ViewTransformServerSnapshotTests: FBServerSnapshotTestCase {
+final class ViewTransformServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testCustomAnchorPoints() {
     let view1 = UIView()

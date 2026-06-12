@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ResizableServerSnaposhTests: FBServerSnapshotTestCase {
+final class ResizableServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testResizableWithUIImage() {
 

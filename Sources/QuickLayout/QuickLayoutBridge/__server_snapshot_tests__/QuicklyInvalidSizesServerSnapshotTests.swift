@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class QuicklyInvalidSizesServerSnapshotTests: FBServerSnapshotTestCase {
+final class QuicklyInvalidSizesServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testProposeZero() {
     let view1 = UIView()
@@ -487,7 +487,7 @@ class QuicklyInvalidSizesServerSnapshotTests: FBServerSnapshotTestCase {
   }
 }
 
-private class View: UIView {
+private final class View: UIView {
 
   var mockedSize: CGSize = .zero
 

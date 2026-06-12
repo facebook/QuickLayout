@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class PaddingServerSnaposhTests: FBServerSnapshotTestCase {
+final class PaddingServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testPaddingAll() {
 

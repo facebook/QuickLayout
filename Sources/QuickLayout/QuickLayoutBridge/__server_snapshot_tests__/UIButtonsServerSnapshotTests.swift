@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class UIButtonsServerSnapshotTests: FBServerSnapshotTestCase {
+final class UIButtonsServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testButtonsWithDifferentTypes() {
 
