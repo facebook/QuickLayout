@@ -67,7 +67,7 @@ struct Bar {
   }
 }
 
-class FastResultsBuilderTests: XCTestCase {
+final class FastResultsBuilderTests: XCTestCase {
   func test1() {
     XCTAssertEqual(Foo().values, [1, 2, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 99, 1])
   }
