@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class FrameServerSnaposhTests: FBServerSnapshotTestCase {
+final class FrameServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testFrameAlignment() {
 

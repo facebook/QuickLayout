@@ -9,7 +9,7 @@ import FBServerSnapshotTestCase
 import QuickLayoutBridge
 import XCTest
 
-class LayoutDirectionSnapShotTests: FBServerSnapshotTestCase {
+final class LayoutDirectionSnapShotTests: FBServerSnapshotTestCase {
 
   func testOverrideLeftToRight() {
     let label1 = UILabel()

@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ApplyFramyServerSnapshotTests: FBServerSnapshotTestCase {
+final class ApplyFramyServerSnapshotTests: FBServerSnapshotTestCase {
 
   private func runTestWith(alignment: Alignment?) {
     let view1 = UIView()

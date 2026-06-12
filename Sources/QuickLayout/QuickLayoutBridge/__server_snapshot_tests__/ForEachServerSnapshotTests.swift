@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ForEachServerSnaposhTests: FBServerSnapshotTestCase {
+final class ForEachServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testForEach() {
 

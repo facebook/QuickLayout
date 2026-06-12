@@ -10,7 +10,7 @@ import QuickLayoutBridge
 import XCTest
 
 @MainActor
-class IdealLayoutServerSnapshotTests: FBServerSnapshotTestCase {
+final class IdealLayoutServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testEqualWidthLabels() {
     let view1 = UILabel()

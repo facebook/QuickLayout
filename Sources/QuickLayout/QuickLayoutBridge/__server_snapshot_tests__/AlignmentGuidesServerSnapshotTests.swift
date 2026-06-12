@@ -25,7 +25,7 @@ extension VerticalAlignment {
 // MARK: - Tests
 
 @MainActor
-class AlignmentGuidesServerSnaspshotTests: FBServerSnapshotTestCase {
+final class AlignmentGuidesServerSnaspshotTests: FBServerSnapshotTestCase {
 
   func testAlignmentGuideTaskList() {
     /// Expecting a task list with two categories, where

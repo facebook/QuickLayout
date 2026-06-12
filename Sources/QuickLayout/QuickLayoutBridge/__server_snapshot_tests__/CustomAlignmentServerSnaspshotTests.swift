@@ -16,7 +16,7 @@ private struct FirstThirdAlignment: AlignmentID {
 }
 
 @MainActor
-class CustomAlignmentServerSnaspshotTests: FBServerSnapshotTestCase {
+final class CustomAlignmentServerSnaspshotTests: FBServerSnapshotTestCase {
 
   func testFirstThirdAlignment() {
     /// Expecting a 3x3 grid of blue rectangles.

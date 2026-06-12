@@ -10,7 +10,7 @@ import QuickLayoutBridge
 import XCTest
 
 @MainActor
-class EmptyLayoutServerSnapshotTests: FBServerSnapshotTestCase {
+final class EmptyLayoutServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testEmptyLayoutWhenUsedInStack() {
     let view1 = UIView()

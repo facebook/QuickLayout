@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class AspectRatioWithInfiniteProposedHeightServerSnapshotTests: FBServerSnapshotTestCase {
+final class AspectRatioWithInfiniteProposedHeightServerSnapshotTests: FBServerSnapshotTestCase {
 
   private func runTestWith(aspectRatio: CGSize, contentMode: ContentMode, proposedSize: CGSize) {
     let view1 = UIView()

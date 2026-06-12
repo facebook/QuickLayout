@@ -9,7 +9,7 @@ import FBServerSnapshotTestCase
 import FBTestImageGenerator
 import QuickLayoutBridge
 
-private class LabelView: UIView {
+private final class LabelView: UIView {
   let label = UILabel()
 
   init(_ text: String) {
@@ -35,7 +35,7 @@ private class LabelView: UIView {
 }
 
 @MainActor
-class LayeringServerSnaposhTests: FBServerSnapshotTestCase {
+final class LayeringServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testLayeringWithAlignment() {
 

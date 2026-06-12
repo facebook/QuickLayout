@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class ConstrainedSizeServerSnapshotTests: FBServerSnapshotTestCase {
+final class ConstrainedSizeServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testConstrainedSizeMaxWidthWithFixedChild() {
     let view1 = ColorView(ColorPallete.yellow, text: "1")

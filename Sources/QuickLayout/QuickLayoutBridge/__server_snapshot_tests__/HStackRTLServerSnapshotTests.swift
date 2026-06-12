@@ -11,7 +11,7 @@ import FBTestImageGenerator
 @testable import QuickLayoutCore
 
 @MainActor
-class HStackRTLServerSnapshotTests: FBServerSnapshotTestCase {
+final class HStackRTLServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testWithThreeViews() {
     let view1 = UIView()

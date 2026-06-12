@@ -10,7 +10,7 @@ import QuickLayoutBridge
 import XCTest
 
 @MainActor
-class AspectRatioServerSnapshotTests: FBServerSnapshotTestCase {
+final class AspectRatioServerSnapshotTests: FBServerSnapshotTestCase {
 
   func testAspectRatioWithTextField() {
     let textField = UITextField()

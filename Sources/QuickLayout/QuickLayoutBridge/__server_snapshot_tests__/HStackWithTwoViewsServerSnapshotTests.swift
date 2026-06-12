@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class HStackWithTwoViewsServerSnapshotTests: FBServerSnapshotTestCase {
+final class HStackWithTwoViewsServerSnapshotTests: FBServerSnapshotTestCase {
 
   private func runTest(on views: (UIView, UIView)) {
     takeSnapshot(

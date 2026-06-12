@@ -10,7 +10,7 @@ import FBTestImageGenerator
 import QuickLayoutBridge
 
 @MainActor
-class FlexibleFrameServerSnaposhTests: FBServerSnapshotTestCase {
+final class FlexibleFrameServerSnaposhTests: FBServerSnapshotTestCase {
 
   func testFrameWithoutConstraints() {
     let view1 = ColorView(ColorPallete.yellow, text: "1")
