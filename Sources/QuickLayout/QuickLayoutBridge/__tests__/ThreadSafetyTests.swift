@@ -10,7 +10,7 @@
 import XCTest
 
 @MainActor
-class ThreadSafetyTests: XCTestCase {
+final class ThreadSafetyTests: XCTestCase {
 
   func testSpacerInASingleStack() {
     let layout1 = HStack {
@@ -119,7 +119,7 @@ class ThreadSafetyTests: XCTestCase {
   }
 }
 
-private class TestElement: Element {
+private final class TestElement: Element {
 
   var layoutMainAxis: Set<Axis> = []
   var flexibilityMainAxis: Set<Axis> = []

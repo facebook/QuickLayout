@@ -10,7 +10,7 @@ import QuickLayoutCore
 import XCTest
 
 @MainActor
-class ComputeStackLayoutSizeThatFitsCountTests: XCTestCase {
+final class ComputeStackLayoutSizeThatFitsCountTests: XCTestCase {
 
   func test_SizeThatFitsInvocationCountWithFuzzyLayoutComparison() {
     let view1 = TestView()

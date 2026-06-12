@@ -10,7 +10,7 @@ import QuickLayoutCore
 import UIKit
 import XCTest
 
-class FixedSizeViewView: UIView {
+final class FixedSizeViewView: UIView {
 
   var sizeThatFitsCounter = 0
   private let intrinsicSize: CGSize?
@@ -35,7 +35,7 @@ class FixedSizeViewView: UIView {
   }
 }
 
-class CountedLabel: UILabel {
+final class CountedLabel: UILabel {
   var sizeThatFitsCounter = 0
   override func sizeThatFits(_ size: CGSize) -> CGSize {
     sizeThatFitsCounter += 1

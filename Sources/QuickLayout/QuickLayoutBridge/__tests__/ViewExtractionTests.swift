@@ -10,7 +10,7 @@ import QuickLayoutCore
 import XCTest
 
 @MainActor
-class ViewExtractionTests: XCTestCase {
+final class ViewExtractionTests: XCTestCase {
   func testViewExtraction() {
 
     let view1 = UIView()

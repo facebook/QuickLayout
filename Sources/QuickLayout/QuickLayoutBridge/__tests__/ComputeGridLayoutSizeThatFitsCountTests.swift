@@ -11,7 +11,7 @@ import UIKit
 import XCTest
 
 @MainActor
-class ComputeGridLayoutSizeThatFitsCountTests: XCTestCase {
+final class ComputeGridLayoutSizeThatFitsCountTests: XCTestCase {
 
   func test_SizeThatFitsInvocationCountWithFuzzyLayoutComparison() {
     let view1 = TestView()

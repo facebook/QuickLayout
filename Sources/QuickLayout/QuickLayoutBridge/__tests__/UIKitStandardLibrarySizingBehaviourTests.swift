@@ -9,7 +9,7 @@
 import XCTest
 
 @MainActor
-class UIKitStandardLibrarySizingBehaviourTests: XCTestCase {
+final class UIKitStandardLibrarySizingBehaviourTests: XCTestCase {
 
   /// UIButton behaves as a fixed size view, but returns partial flexibility.
   private func runTestForButton(_ view: UIButton, name: String) {
@@ -331,25 +331,25 @@ class UIKitStandardLibrarySizingBehaviourTests: XCTestCase {
 }
 
 /// Testing custom views, that don't have a sizeThatFits overrides.
-private class CustomLabel: UILabel {}
-private class CustomButton: UIButton {}
-private class CustomView: UIView {}
-private class CustomScrollView: UIScrollView {}
-private class CustomCollectionView: UICollectionView {}
-private class CustomTableView: UITableView {}
-private class CustomTextView: UITextView {}
-private class CustomTextField: UITextField {}
-private class CustomSearchBar: UISearchBar {}
-private class CustomSlider: UISlider {}
-private class CustomProgressView: UIProgressView {}
-private class CustomSearchTextField: UISearchTextField {}
-private class CustomImageView: UIImageView {}
-private class CustomSwitch: UISwitch {}
-private class CustomStepper: UIStepper {}
-private class CustomPageControl: UIPageControl {}
-private class CustomActivityIndicatorView: UIActivityIndicatorView {}
+private final class CustomLabel: UILabel {}
+private final class CustomButton: UIButton {}
+private final class CustomView: UIView {}
+private final class CustomScrollView: UIScrollView {}
+private final class CustomCollectionView: UICollectionView {}
+private final class CustomTableView: UITableView {}
+private final class CustomTextView: UITextView {}
+private final class CustomTextField: UITextField {}
+private final class CustomSearchBar: UISearchBar {}
+private final class CustomSlider: UISlider {}
+private final class CustomProgressView: UIProgressView {}
+private final class CustomSearchTextField: UISearchTextField {}
+private final class CustomImageView: UIImageView {}
+private final class CustomSwitch: UISwitch {}
+private final class CustomStepper: UIStepper {}
+private final class CustomPageControl: UIPageControl {}
+private final class CustomActivityIndicatorView: UIActivityIndicatorView {}
 
-private class CustomLabelWithOverrides: UILabel {
+private final class CustomLabelWithOverrides: UILabel {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -358,7 +358,7 @@ private class CustomLabelWithOverrides: UILabel {
   }
 }
 
-private class CustomButtonWithOverrides: UIButton {
+private final class CustomButtonWithOverrides: UIButton {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -367,7 +367,7 @@ private class CustomButtonWithOverrides: UIButton {
   }
 }
 
-private class CustomViewWithOverrides: UIView {
+private final class CustomViewWithOverrides: UIView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -376,7 +376,7 @@ private class CustomViewWithOverrides: UIView {
   }
 }
 
-private class CustomScrollViewWithOverrides: UIScrollView {
+private final class CustomScrollViewWithOverrides: UIScrollView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -385,7 +385,7 @@ private class CustomScrollViewWithOverrides: UIScrollView {
   }
 }
 
-private class CustomTableViewWithOverrides: UITableView {
+private final class CustomTableViewWithOverrides: UITableView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -394,7 +394,7 @@ private class CustomTableViewWithOverrides: UITableView {
   }
 }
 
-private class CustomTextViewWithOverrides: UITextView {
+private final class CustomTextViewWithOverrides: UITextView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -403,7 +403,7 @@ private class CustomTextViewWithOverrides: UITextView {
   }
 }
 
-private class CustomCollectionViewWithOverrides: UICollectionView {
+private final class CustomCollectionViewWithOverrides: UICollectionView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -412,7 +412,7 @@ private class CustomCollectionViewWithOverrides: UICollectionView {
   }
 }
 
-private class CustomStepperWithOverrides: UIStepper {
+private final class CustomStepperWithOverrides: UIStepper {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -421,7 +421,7 @@ private class CustomStepperWithOverrides: UIStepper {
   }
 }
 
-private class CustomSwitchWithOverrides: UISwitch {
+private final class CustomSwitchWithOverrides: UISwitch {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -430,7 +430,7 @@ private class CustomSwitchWithOverrides: UISwitch {
   }
 }
 
-private class CustomPageControlWithOverrides: UIPageControl {
+private final class CustomPageControlWithOverrides: UIPageControl {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -439,7 +439,7 @@ private class CustomPageControlWithOverrides: UIPageControl {
   }
 }
 
-private class CustomActivityIndicatorWithOverrides: UIActivityIndicatorView {
+private final class CustomActivityIndicatorWithOverrides: UIActivityIndicatorView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -448,7 +448,7 @@ private class CustomActivityIndicatorWithOverrides: UIActivityIndicatorView {
   }
 }
 
-private class CustomTextFieldWithOverrides: UITextField {
+private final class CustomTextFieldWithOverrides: UITextField {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -457,7 +457,7 @@ private class CustomTextFieldWithOverrides: UITextField {
   }
 }
 
-private class CustomSearchBarWithOverrides: UISearchBar {
+private final class CustomSearchBarWithOverrides: UISearchBar {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -466,7 +466,7 @@ private class CustomSearchBarWithOverrides: UISearchBar {
   }
 }
 
-private class CustomSliderWithOverrides: UISlider {
+private final class CustomSliderWithOverrides: UISlider {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -475,7 +475,7 @@ private class CustomSliderWithOverrides: UISlider {
   }
 }
 
-private class CustomProgressViewWithOverrides: UIProgressView {
+private final class CustomProgressViewWithOverrides: UIProgressView {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -484,7 +484,7 @@ private class CustomProgressViewWithOverrides: UIProgressView {
   }
 }
 
-private class CustomSearchTextFieldWithOverrides: UISearchTextField {
+private final class CustomSearchTextFieldWithOverrides: UISearchTextField {
   var sizeThatFitsCallCounter = 0
 
   override func sizeThatFits(_ size: CGSize) -> CGSize {

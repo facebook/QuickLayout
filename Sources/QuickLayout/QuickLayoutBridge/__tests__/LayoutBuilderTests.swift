@@ -153,7 +153,7 @@ final class LayoutBuilderTests: XCTestCase {
   }
 }
 
-private class TestElement: Layout {
+private final class TestElement: Layout {
 
   let identifier: String = UUID().uuidString
 

@@ -15,7 +15,7 @@ private struct TestData {
 }
 
 @MainActor
-class PixelGridRoundingTests: XCTestCase {
+final class PixelGridRoundingTests: XCTestCase {
   func test3_0() {
     let testTada = [
       TestData(screenScale: 3.0, input: 0.99, output: 1.0),
