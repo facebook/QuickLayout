@@ -24,7 +24,7 @@
     "clsx": "^2.0.0",
     "docusaurus-plugin-internaldocs-fb": "1.19.2",
     "dompurify": "3.4.1",
-    "js-yaml": "^4.1.1",
+    "js-yaml": "^4.2.0",
     "loader-utils": "3.3.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
