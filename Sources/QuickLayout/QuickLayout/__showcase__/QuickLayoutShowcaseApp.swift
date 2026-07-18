@@ -210,7 +210,7 @@ private extension String {
     // Split by uppercase letters
     let words = stripped.reduce("") { result, char in
       guard !result.isEmpty else { return String(char) }
-      return char.isUppercase ? result + " " + String(char) : result + String(char)
+      return char.isUppercase ? "\(result) \(char)" : "\(result)\(char)"
     }
 
     // Filter out single capital letters (abbreviations)
