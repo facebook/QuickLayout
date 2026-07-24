@@ -54,12 +54,14 @@ extension UISearchBar {
   }
 }
 
+#if !os(tvOS)
 extension UISlider {
   @objc
   override func quick_viewType() -> ViewType {
     return .horizontallyExpandable
   }
 }
+#endif // !os(tvOS)
 
 extension UIProgressView {
   @objc
@@ -68,12 +70,14 @@ extension UIProgressView {
   }
 }
 
+#if !os(tvOS)
 extension UISearchTextField {
   @objc
   override func quick_viewType() -> ViewType {
     return .horizontallyExpandable
   }
 }
+#endif // !os(tvOS)
 
 extension UITextView {
   @objc
@@ -110,12 +114,14 @@ extension UIActivityIndicatorView {
   }
 }
 
+#if !os(tvOS)
 extension UIStepper {
   @objc
   override func quick_viewType() -> ViewType {
     return .fixedSize
   }
 }
+#endif // !os(tvOS)
 
 extension UIPageControl {
   @objc
@@ -124,9 +130,11 @@ extension UIPageControl {
   }
 }
 
+#if !os(tvOS)
 extension UISwitch {
   @objc
   override func quick_viewType() -> ViewType {
     return .fixedSize
   }
 }
+#endif // !os(tvOS)
