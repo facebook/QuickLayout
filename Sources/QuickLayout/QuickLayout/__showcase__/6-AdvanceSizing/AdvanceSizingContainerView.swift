@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import METAUIBase
 import QuickLayout
 
 @QuickLayout
@@ -15,12 +16,12 @@ final class AdvanceSizingContainerView: UIView {
   private let sizeInfoTwo = UILabel()
 
   init() {
-    let firstExampleSize = AdvanceSizingView.sizeThatFits(UIScreen.main.bounds.size, with: "Hi", image: UIImage(systemName: "hand.wave"))
+    let firstExampleSize = AdvanceSizingView.sizeThatFits(UIApplication.shared.meta_primaryWindowSceneBounds.size, with: "Hi", image: UIImage(systemName: "hand.wave"))
     sizeInfoOne.numberOfLines = 0
     sizeInfoOne.textAlignment = .center
     sizeInfoOne.text = "Size with title 'Hi' and waving image. Width: \(firstExampleSize.width), height: \(firstExampleSize.height)"
 
-    let secondExampleSize = AdvanceSizingView.sizeThatFits(UIScreen.main.bounds.size, with: "Hello World", image: nil)
+    let secondExampleSize = AdvanceSizingView.sizeThatFits(UIApplication.shared.meta_primaryWindowSceneBounds.size, with: "Hello World", image: nil)
     sizeInfoTwo.numberOfLines = 0
     sizeInfoTwo.textAlignment = .center
     sizeInfoTwo.text = "Size with title 'Hello World' and no image. Width: \(secondExampleSize.width), height: \(secondExampleSize.height)"
