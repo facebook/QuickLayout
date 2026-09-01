@@ -23,28 +23,44 @@ public struct LayoutNode: Sendable {
   public let gridInfo: GridInfo?
   public let children: [Child]
 
-  public init(view: UIView?, dimensions: ElementDimensions, gridInfo: GridInfo? = nil) {
+  /// Optional caller-supplied identifier, propagated from a `.tag(_:)` modifier
+  /// Lets callers locate a specific element's resolved node when walking
+  /// the computed layout tree — useful for `ViewProxy` leaves, which
+  /// carry no `view` identity.
+  public let tag: String?
+
+  public init(view: UIView?, dimensions: ElementDimensions, gridInfo: GridInfo? = nil, tag: String? = nil) {
     self.view = view
     self.dimensions = dimensions
     self.gridInfo = gridInfo
     self.children = []
+    self.tag = tag
   }
 
-  init(view: UIView?, size: CGSize, children: [Child], alignmentGuides: AlignmentGuides) {
+  init(view: UIView?, size: CGSize, children: [Child], alignmentGuides: AlignmentGuides, tag: String? = nil) {
     self.view = view
     self.children = children
     self.gridInfo = nil
     self.dimensions = ElementDimensions(size, alignmentGuides: alignmentGuides)
+    self.tag = tag
   }
-  init(view: UIView?, dimensions: ElementDimensions, gridInfo: GridInfo?, children: [Child]) {
+  init(view: UIView?, dimensions: ElementDimensions, gridInfo: GridInfo?, children: [Child], tag: String? = nil) {
     self.view = view
     self.dimensions = dimensions
     self.gridInfo = gridInfo
     self.children = children
+    self.tag = tag
   }
 
   public var size: CGSize {
     return CGSize(width: dimensions.width, height: dimensions.height)
+  }
+
+  /// Returns a copy of this node with `tag` set, preserving everything else.
+  /// Used by `TagElement` to stamp the caller's identifier onto the child's
+  /// resolved node.
+  func withTag(_ tag: String?) -> LayoutNode {
+    LayoutNode(view: view, dimensions: dimensions, gridInfo: gridInfo, children: children, tag: tag)
   }
 
   public struct Child: Sendable {

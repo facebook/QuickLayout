@@ -216,6 +216,15 @@ public extension Element {
     LayoutDirectionElement(child: self, layoutDirection: direction)
   }
 
+  /// Stamps `tag` onto this element's resolved `LayoutNode` without changing the
+  /// layout. Use it to locate a specific element's size/position when walking the
+  /// computed tree — most useful for `ViewProxy` leaves, which have no `view`
+  /// identity. Placement in the chain selects which node is tagged: `.tag(_:)`
+  /// before a sizing modifier tags the inner node, after it tags the outer node.
+  func tag(_ tag: String) -> Element & Layout {
+    TagElement(child: self, tag: tag)
+  }
+
   /// Positions the content view within the frame of the target view.
   /// The modifier measures the target view, proposes the target view's size to the content view, and then aligns it within the frame of the target view.
   /// See also ZStack.
