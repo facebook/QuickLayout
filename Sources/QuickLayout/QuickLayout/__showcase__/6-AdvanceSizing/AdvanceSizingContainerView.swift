@@ -15,17 +15,25 @@ final class AdvanceSizingContainerView: UIView {
   private let sizeInfoTwo = UILabel()
 
   init() {
-    let firstExampleSize = AdvanceSizingView.sizeThatFits(UIScreen.main.bounds.size, with: "Hi", image: UIImage(systemName: "hand.wave"))
     sizeInfoOne.numberOfLines = 0
     sizeInfoOne.textAlignment = .center
-    sizeInfoOne.text = "Size with title 'Hi' and waving image. Width: \(firstExampleSize.width), height: \(firstExampleSize.height)"
 
-    let secondExampleSize = AdvanceSizingView.sizeThatFits(UIScreen.main.bounds.size, with: "Hello World", image: nil)
     sizeInfoTwo.numberOfLines = 0
     sizeInfoTwo.textAlignment = .center
-    sizeInfoTwo.text = "Size with title 'Hello World' and no image. Width: \(secondExampleSize.width), height: \(secondExampleSize.height)"
 
     super.init(frame: .zero)
+  }
+
+  override func didMoveToWindow() {
+    super.didMoveToWindow()
+    guard let screenBounds = window?.windowScene?.screen.bounds else { return }
+
+    let firstExampleSize = AdvanceSizingView.sizeThatFits(screenBounds.size, with: "Hi", image: UIImage(systemName: "hand.wave"))
+    let firstSizeInfo = "Size with title 'Hi' and waving image. Width: \(firstExampleSize.width), height: \(firstExampleSize.height)"
+    sizeInfoOne.text = firstSizeInfo
+    let secondExampleSize = AdvanceSizingView.sizeThatFits(screenBounds.size, with: "Hello World", image: nil)
+    let secondSizeInfo = "Size with title 'Hello World' and no image. Width: \(secondExampleSize.width), height: \(secondExampleSize.height)"
+    sizeInfoTwo.text = secondSizeInfo
   }
 
   @MainActor required init?(coder: NSCoder) {
