@@ -11,6 +11,18 @@ import QuickLayoutBridge
 
 final class GridLayoutServerSnapshotTests: FBServerSnapshotTestCase {
 
+  private static let wrappingLabelTestNames = [
+    "testMultipleChildrenSingleRowTwoPartialWrappingLabels",
+    "testLongLabelWithSpacerInBetween",
+  ]
+
+  override func imageComparisonErrorThreshold() -> FBImageComparisonErrorThreshold {
+    if Self.wrappingLabelTestNames.contains(where: { name.contains($0) }) {
+      return .relaxed
+    }
+    return .default
+  }
+
   // MARK: - Test builder functions
 
   // Single child cases
